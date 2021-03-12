@@ -1,4 +1,3 @@
-
 //Variable for the #generate ID
 var generateBtn = document.querySelector("#generate");
 
@@ -6,23 +5,28 @@ var generateBtn = document.querySelector("#generate");
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "`", "|", "}", "{", "[", "]", "\:", ";", "?", ">", "<", ",", ".", "/", "-", "="];
+var special = ["!", "@", "#", "$", "%", "&", "*", "_", "+", "[", "]", "-", "="];
 
-var profile = {
+// console.log (upperChar)
+//console.log (lowerChar)
+//console.log (numbers)
+//console.log (special)
+
+var entry = {
   length: 0,
   upperCase: false,
   lowerCase: false,
   numeric: false,
   specChar: false,
-  rawPassword: "",
+  getPassword: "",
 
   pwLength: function () {
     
-    this.length = parseInt(prompt("How many charecters? (must be between 6 and 30 characters"));
+    this.length = (prompt("How many charecters? (must be between 6 and 30 characters"));
     
   
-    while (this.length < 6 || this.length > 30 || isNaN(this.length)) {
-      this.length = parseInt(prompt("How many charecters? (must be between 6 and 30 characters"));
+    while (this.length < 6 || this.length > 30) {
+      this.length = (prompt("How many charecters? (must be between 6 and 30 characters"));
     }
     
 
@@ -38,12 +42,12 @@ var profile = {
     if (this.upperCase === true) {
       for (var u = 0; u < this.length; u++) {
         var upperRandom = Math.floor(Math.random() * upperChar.length);
-        this.rawPassword += upperChar[upperRandom];
+        this.getPassword += upperChar[upperRandom];
       }
     }
     
    
-    return this.rawPassword;
+    return this.getPassword;
   },
   
 
@@ -56,11 +60,11 @@ var profile = {
     if (this.lowerCase === true) {
       for (var l = 0; l < this.length; l++) {
         var lowerRandom = Math.floor(Math.random() * lowerChar.length);
-        this.rawPassword += lowerChar[lowerRandom];
+        this.getPassword += lowerChar[lowerRandom];
       }
     }
 
-    return this.rawPassword;
+    return this.getPassword;
   },
 
 
@@ -72,12 +76,12 @@ var profile = {
     if (this.numeric === true) {
       for (var n = 0; n < this.length; n++) {
         var numbersRandom = Math.floor(Math.random() * numbers.length);
-        this.rawPassword += numbers[numbersRandom];
+        this.getPassword += numbers[numbersRandom];
       }
     }
 
 
-    return this.rawPassword;
+    return this.getPassword;
   },
 
 
@@ -85,16 +89,16 @@ var profile = {
     this.specChar = confirm("Do you want special characters?");
     
     if (this.specChar === true) {
-      for (var s = 0; s < profile.length; s++) {
+      for (var s = 0; s < entry.length; s++) {
         var specialRandom = Math.floor(Math.random() * special.length);
-        this.rawPassword += special[specialRandom];  
+        this.getPassword += special[specialRandom];  
       }
     }
     else if (this.upperCase === false && this.lowerCase === false && this.numeric === false && this.specChar === false) {
       alert("At least one criteria must be selected. Please generate a new password.");
       return;
     }
-    return(this.rawPassword);  
+    return(this.getPassword);  
   }
 };
 
@@ -108,18 +112,18 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   
-  while (profile.length !== null) {
-    profile.pwLength();
-    profile.pwUpperCase();
-    profile.pwLowerCase();
-    profile.pwNumeric();
-    profile.pwSpecChar();
+  while (entry.length !== null) {
+    entry.pwLength();
+    entry.pwUpperCase();
+    entry.pwLowerCase();
+    entry.pwNumeric();
+    entry.pwSpecChar();
 
-    var rawPasswordLength = profile.rawPassword.length;
+    var getPasswordLength = entry.getPassword.length;
     var result = "";
 
-    for (var i = 0; i < profile.length; i++) {
-      result += profile.rawPassword.charAt(Math.floor(Math.random() * rawPasswordLength));
+    for (var i = 0; i < entry.length; i++) {
+      result += entry.getPassword.charAt(Math.floor(Math.random() * getPasswordLength));
     }
     
     return result;
