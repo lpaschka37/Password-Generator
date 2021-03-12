@@ -7,7 +7,7 @@ var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var special = ["!", "@", "#", "$", "%", "&", "*", "_", "+", "[", "]", "-", "="];
 
-// console.log (upperChar)
+//console.log (upperChar)
 //console.log (lowerChar)
 //console.log (numbers)
 //console.log (special)
@@ -44,13 +44,11 @@ var entry = {
         var upperRandom = Math.floor(Math.random() * upperChar.length);
         this.getPassword += upperChar[upperRandom];
       }
-    }
-    
-   
+    }  
+  
     return this.getPassword;
   },
   
-
   pwLowerCase: function () {
     
    
@@ -101,6 +99,7 @@ var entry = {
     return(this.getPassword);  
   }
 };
+
 
 function writePassword() {
   var password = generatePassword();
