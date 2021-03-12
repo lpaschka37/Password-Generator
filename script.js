@@ -6,11 +6,30 @@ var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var special = ["!", "@", "#", "$", "%", "&", "*", "_", "+", "[", "]", "-", "="];
-
 //console.log (upperChar)
 //console.log (lowerChar)
 //console.log (numbers)
 //console.log (special)
+
+//trying this method to generate charecters, numbers and symbols
+// function getRandomUpper () {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
+
+// function getRandomLower () {
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
+
+// function getRandomNumber () {
+//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+// }
+
+// function getRandomSymbol () {
+//   const symbols = '!@#$%^&*()'
+//   return symbols[Math.floor(Math.random() * symbols.length)];
+// }
+
+// console.log(getRandomLower);
 
 var entry = {
   length: 0,
@@ -42,7 +61,7 @@ var entry = {
     if (this.upperCase === true) {
       for (var u = 0; u < this.length; u++) {
         var upperRandom = Math.floor(Math.random() * upperChar.length);
-        this.getPassword += upperChar[upperRandom];
+        this.getPassword += upperChar [upperRandom];
       }
     }  
   
