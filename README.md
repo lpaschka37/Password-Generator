@@ -8,7 +8,7 @@ This repository ("uofm-bootcamp-homework-03") contains my third homework assignm
 ## The Assignment
 Title: Password Generator  
 Assignment: 3  
-Author: Kyle Kleven    
+Author: Luke Paschka    
 Course: UofM Coding Boot Camp 
 
 ### The Purpose
@@ -27,7 +27,5 @@ This week’s homework involves completing work on a password generator applicat
 ### The Mock-up
 The following image shows the web application's appearance and functionality:
 
-![password generator demo](/assets/03-javascript-homework-demo.png)
-
 ## The Deliverable
-https://kdkleven.github.io/passwordGenerator/index.html
+https://lpaschka37.github.io/Script-Homework/
