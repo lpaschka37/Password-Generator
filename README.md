@@ -28,4 +28,4 @@ This week’s homework involves completing work on a password generator applicat
 The following image shows the web application's appearance and functionality:
 
 ## The Deliverable
-https://lpaschka37.github.io/Script-Homework/
+https://lpaschka37.github.io/Password-Generator/
